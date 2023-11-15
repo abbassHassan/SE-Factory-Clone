@@ -1,0 +1,363 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100vh; /* 100% of the viewport height */
+  width: 100%;
+}
+
+.hero-left,
+.hero-right {
+  position: relative;
+}
+
+.hero-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(251, 80, 142, 0.93); /* Pink color with opacity */
+  animation: colorChange 9s infinite;
+
+}
+
+.hero-right::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(35, 35, 35, .85); /* Black color with opacity */
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-left {
+  background-image: url('../assets/img-1.png');
+
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  text-align: right;
+
+  padding: 40px;
+}
+
+.hero-right {
+  background-image: url('../assets/img-2.png');
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: left;
+
+  padding: 40px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  z-index: 1; /* Ensure the navbar is above the background images */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 60px;
+}
+
+.se-logo {
+  width: 12rem;
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 3rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.hero-left h2 {
+  color: white;
+  font-size: 25px;
+  font-weight: 900;
+  font-family: monospace;
+  background-color: #363738;
+  margin-top: 100px;
+  margin-bottom: 0.8rem;  
+  padding: 0px 10px;
+  display: inline-block;
+
+}
+
+.hero-right h2 {
+  color: #363738;
+  font-size: 25px;
+  font-weight:900;
+  font-family: monospace;
+  background-color: white;
+  margin-top: 100px;
+
+  margin-bottom: 1rem;  
+  padding: 0px 10px;
+  text-align: left;
+  display: inline-block;
+}
+
+.hero-left h3 {
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: Noto Sans Mono, sans-serif;
+  margin-bottom: 1rem;  
+}
+
+.hero-left h3::before {
+  content: " "; /* Ensure initial content is not visible */
+  display: inline-block;
+  white-space: nowrap; /* Prevent line breaks */
+  animation: textChange 9s infinite; /* Adjust the duration as needed */
+}
+
+.hero-right h3 {
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: Noto Sans Mono, sans-serif;
+  margin-bottom: 1rem;  
+}
+
+.hero-left p {
+  width: 550px;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-align: end;
+  font-family: Noto Sans, sans-serif;
+  line-height: 1.4;
+}
+
+.hero-right p {
+  width: 550px;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-align: start;
+  font-family: Noto Sans, sans-serif;
+  line-height: 1.4;
+}
+
+.hero-left a {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: monospace;
+  background-color: #363738;
+  margin-bottom: 0.8rem;  
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+.hero-right a {
+  color: #363738;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: monospace;
+  background-color: white;
+  margin-bottom: 0.8rem;  
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: rgba(40, 238, 167, 0.93);
+  }
+  50% {
+    background-color: rgba(251, 80, 142, 0.93);
+  }
+
+  100% {
+    background-color: rgba(152, 100, 218, 0.93);
+  }
+}
+
+@keyframes textChange {
+  0% {
+    content: "SOFTWARE ENGINEER?";
+  }
+  50% {
+    content: "UI/UX DESIGNER?";
+  }
+  100% {
+    content: "DATA ENGINEER?";
+  }
+}
+
+.youtube {
+  background-color: #f1f2f3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 140vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30vh;
+  width: 80%;
+}
+
+.title {
+  display: flex;
+  font-family: "Noto Sans Mono", sans-serif;
+}
+
+.arrow {
+  font-size: 36px;
+  color: #28eea7;
+  font-weight: bold;
+
+}
+
+.sub-title {
+  color: #363738;
+  font-size: 24px;
+  padding: 8px;
+  font-weight: bolder;
+
+}
+
+.circles {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.black-circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #363738;
+}
+
+.grey-circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #dcdee1;
+}
+
+.green-circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #28eea7;
+}
+
+iframe {
+  border: 1rem solid #28eea7;
+  border-radius: 2rem;
+}
+
+.milestones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats {
+  height: 80vh;
+  background-color: white ;
+  width: 100%;
+  display: flex;
+  color: white;
+  padding: 5%;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  height: 48%;
+  justify-content: space-between;
+}
+
+.card1, .card2 , .card3 , .card4 {
+  background-color: #f1f2f3;
+  border-radius: 1rem;
+  padding: 2rem;
+  font-family: "Noto Sans Mono", sans-serif;
+  color: #363738;
+}
+
+.card1 {
+ width: 55%;
+} 
+.card2 {
+ width: 40%;
+} 
+.card3 {
+ width: 48%;
+} 
+.card4 {
+ width: 48%;
+} 
+
+.rate {
+  background-color: #f1f2f3;
+  border-radius: 1rem;
+  font-family: noto sans mono, sans-serif;
+  color: #363738;
+  height: 100%;
+  width: 48%;
+  padding: 3rem;
+}
+
+.toto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 48%;
+}
+
+.card h2 {
+  font-size: 4rem;
+}
+
+.rate h2 {
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.rate h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.rate p {
+  line-height: 1.4;
+}
